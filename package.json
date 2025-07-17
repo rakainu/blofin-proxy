@@ -1,0 +1,8 @@
+{
+  "name": "blofin-proxy",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "^1.0.0",
+    "uuid": "^9.0.0"
+  }
+}
