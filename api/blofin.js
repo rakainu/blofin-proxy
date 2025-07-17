@@ -1,4 +1,5 @@
 const crypto = require('crypto');
+console.log('🔍 blofin.js function called');
 const { v4: uuidv4 } = require('uuid');
 
 const BLOFIN_API_KEY = process.env.API_KEY;
