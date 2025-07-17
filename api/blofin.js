@@ -11,10 +11,13 @@ const ENDPOINT = '/api/v1/trade/fills?limit=50';
 module.exports = async (req, res) => {
   if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
 
-  const token = req.headers['x-access-token'];
-  if (token !== ACCESS_TOKEN) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
+const token = req.headers['x-access-token'];
+console.log('Received Token:', token);
+console.log('Expected Token:', ACCESS_TOKEN);
+
+if (token !== ACCESS_TOKEN) {
+  return res.status(401).json({ error: 'Unauthorized', tokenReceived: token });
+}
 
   try {
     const timestamp = Date.now().toString();
